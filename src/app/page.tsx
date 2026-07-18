@@ -10,35 +10,35 @@ export default function Home() {
 
       {/* Header */}
       <header className="relative z-50 border-b border-[var(--border-subtle)] glass">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-[var(--accent)] to-[#00B4D8] shadow-[var(--shadow-glow)]">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <div className="max-w-6xl mx-auto px-4 py-3 sm:py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-[var(--accent)] to-[#00B4D8] shadow-[var(--shadow-glow)]">
+              <svg className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
             </div>
-            <h1 className="text-lg font-bold text-[var(--text-primary)]" style={{ fontFamily: 'var(--font-heading)' }}>
+            <h1 className="text-base sm:text-lg font-bold text-[var(--text-primary)]" style={{ fontFamily: 'var(--font-heading)' }}>
               Watch Party
             </h1>
           </div>
-          <p className="text-[var(--text-muted)] text-sm hidden sm:block" style={{ fontFamily: 'var(--font-body)' }}>
+          <p className="text-[var(--text-muted)] text-xs sm:text-sm hidden sm:block" style={{ fontFamily: 'var(--font-body)' }}>
             تماشای همزمان ویدیو با دوستان
           </p>
         </div>
       </header>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-16">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-10 sm:py-16">
         {/* Hero */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-card)] mb-6">
+        <div className="text-center mb-10 sm:mb-16 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-card)] mb-5 sm:mb-6">
             <span className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse-dot" />
-            <span className="text-sm text-[var(--text-secondary)]" style={{ fontFamily: 'var(--font-body)' }}>
+            <span className="text-xs sm:text-sm text-[var(--text-secondary)]" style={{ fontFamily: 'var(--font-body)' }}>
               رایگان و بدون ثبت‌نام
             </span>
           </div>
           <h2
-            className="text-4xl md:text-6xl font-black text-[var(--text-primary)] mb-5 leading-tight"
+            className="text-3xl sm:text-4xl md:text-6xl font-black text-[var(--text-primary)] mb-4 sm:mb-5 leading-tight"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             با دوستان{' '}
@@ -47,7 +47,7 @@ export default function Home() {
             فیلم تماشا کنید
           </h2>
           <p
-            className="text-[var(--text-secondary)] text-lg max-w-xl mx-auto leading-relaxed"
+            className="text-[var(--text-secondary)] text-base sm:text-lg max-w-xl mx-auto leading-relaxed px-2"
             style={{ fontFamily: 'var(--font-body)' }}
           >
             یک اتاق بسازید، لینک ویدیو را اضافه کنید و دوستان خود را دعوت کنید.
@@ -56,7 +56,7 @@ export default function Home() {
         </div>
 
         {/* Features */}
-        <div className="grid md:grid-cols-3 gap-5 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 mb-12 sm:mb-16">
           {[
             {
               icon: (
@@ -91,22 +91,22 @@ export default function Home() {
           ].map((feature, i) => (
             <div
               key={i}
-              className="group relative bg-[var(--bg-card)] rounded-xl p-6 border border-[var(--border-subtle)] hover:border-[var(--border-default)] transition-all duration-300 hover:shadow-[var(--shadow-card)]"
+              className="group relative bg-[var(--bg-card)] rounded-xl p-5 sm:p-6 border border-[var(--border-subtle)] hover:border-[var(--border-default)] transition-all duration-300 hover:shadow-[var(--shadow-card)]"
               style={{ animationDelay: `${i * 100}ms` }}
             >
               <div
-                className="w-11 h-11 rounded-lg flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg flex items-center justify-center mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-110"
                 style={{ background: `${feature.color}15`, color: feature.color }}
               >
                 {feature.icon}
               </div>
               <h3
-                className="text-[var(--text-primary)] font-bold mb-2 text-[15px]"
+                className="text-[var(--text-primary)] font-bold mb-1.5 sm:mb-2 text-[14px] sm:text-[15px]"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
                 {feature.title}
               </h3>
-              <p className="text-[var(--text-secondary)] text-sm leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
+              <p className="text-[var(--text-secondary)] text-xs sm:text-sm leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
                 {feature.desc}
               </p>
             </div>
@@ -119,8 +119,8 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-        <footer className="mt-20 text-center border-t border-[var(--border-subtle)] pt-8 pb-4">
-          <p className="text-[var(--text-muted)] text-sm" style={{ fontFamily: 'var(--font-body)' }}>
+        <footer className="mt-16 sm:mt-20 text-center border-t border-[var(--border-subtle)] pt-6 sm:pt-8 pb-6 sm:pb-4">
+          <p className="text-[var(--text-muted)] text-xs sm:text-sm" style={{ fontFamily: 'var(--font-body)' }}>
             ساخته شده با عشق | Watch Party
           </p>
         </footer>

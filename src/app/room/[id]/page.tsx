@@ -71,7 +71,7 @@ export default function RoomPage() {
   const handleJoin = (name: string) => { setUsername(name); setOnlineUsers([name]) }
 
   if (loading) return (
-    <div className="min-h-screen bg-[#0B0D11] flex items-center justify-center">
+    <div className="min-h-dvh sm:min-h-screen bg-[#0B0D11] flex items-center justify-center">
       <div className="flex flex-col items-center gap-3">
         <div className="w-10 h-10 rounded-full border-[3px] border-[var(--accent)] border-t-transparent animate-spin" />
         <span className="text-sm text-white/40" style={{ fontFamily: 'var(--font-body)' }}>در حال بارگذاری...</span>
@@ -80,13 +80,13 @@ export default function RoomPage() {
   )
 
   if (error || !room) return (
-    <div className="min-h-screen bg-[#0B0D11] flex items-center justify-center p-4">
-      <div className="bg-[#12141a] rounded-2xl p-8 text-center border border-white/5 max-w-sm w-full animate-fade-in-up">
-        <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center mx-auto mb-4">
-          <svg className="w-7 h-7 text-white/20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+    <div className="min-h-dvh sm:min-h-screen bg-[#0B0D11] flex items-center justify-center p-4">
+      <div className="bg-[#12141a] rounded-2xl p-6 sm:p-8 text-center border border-white/5 max-w-sm w-full animate-fade-in-up">
+        <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/5 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+          <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white/20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
         </div>
-        <h2 className="text-lg font-bold text-white mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{error || 'اتاق یافت نشد'}</h2>
-        <button onClick={() => router.push('/')} className="mt-4 px-6 py-2.5 bg-[var(--accent)] text-black rounded-xl hover:bg-[var(--accent-dim)] transition font-medium text-sm" style={{ fontFamily: 'var(--font-body)' }}>بازگشت</button>
+        <h2 className="text-base sm:text-lg font-bold text-white mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{error || 'اتاق یافت نشد'}</h2>
+        <button onClick={() => router.push('/')} className="mt-3 sm:mt-4 px-6 py-2.5 bg-[var(--accent)] text-black rounded-xl hover:bg-[var(--accent-dim)] transition font-medium text-sm min-h-[44px]" style={{ fontFamily: 'var(--font-body)' }}>بازگشت</button>
       </div>
     </div>
   )

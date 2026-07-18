@@ -439,3 +439,23 @@ html, body {
     font-size: 20px;
   }
 }
+
+/* ── Mobile video control bar polish ── */
+@media (max-width: 639px) {
+  /* Progress bar: thicker touch target, thin visual */
+  .group\/prog {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .group\/prog > div {
+    height: 3px !important;
+  }
+  .group\/prog:hover > div {
+    height: 5px !important;
+  }
+
+  /* Ensure controls don't overflow small screens */
+  video ~ div[dir="ltr"] .flex.items-center.justify-between {
+    gap: 0;
+  }
+}
