@@ -119,6 +119,16 @@ export default function Home() {
             </div>
           </div>
         </footer>
+
+        {/* Branding watermark — subtle, bottom-right */}
+        <div className="fixed bottom-2 left-2 sm:bottom-3 sm:left-3 z-0 pointer-events-none select-none">
+          <span
+            className="text-[9px] sm:text-[10px] tracking-widest text-white/[0.04] font-medium"
+            style={{ fontFamily: 'var(--font-heading)', letterSpacing: '0.15em' }}
+          >
+            sinapk
+          </span>
+        </div>
       </div>
     </main>
   )

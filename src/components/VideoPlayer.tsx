@@ -457,7 +457,7 @@ export default function VideoPlayer({ videoUrl, videoType, onSync, externalState
                   </button>
 
 {panel === 'main' && (
-                    <div className="absolute bottom-full mb-3 sm:right-0 left-1/2 sm:left-auto -translate-x-1/2 sm:translate-x-0 bg-[#1c1f26] border border-white/10 rounded-2xl p-1.5 w-[220px] sm:min-w-[220px] shadow-2xl max-h-[70vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+                    <div className="absolute bottom-full mb-3 right-0 sm:right-0 bg-[#1c1f26] border border-white/10 rounded-2xl p-1.5 w-[200px] sm:min-w-[220px] shadow-2xl max-h-[70vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
                       <button onClick={() => setPanel('subtitles')} className="w-full flex items-center justify-between px-3.5 py-3 sm:py-2.5 rounded-xl text-sm text-white/70 hover:bg-white/5 hover:text-white transition active:bg-white/10">
                         <span className="flex items-center gap-2.5" style={{ fontFamily: 'var(--font-body)' }}>زیرنویس</span>
                         <span className="text-xs text-white/30">{activeSub >= 0 ? subs[activeSub]?.label : 'خاموش'}</span>
@@ -481,7 +481,7 @@ export default function VideoPlayer({ videoUrl, videoType, onSync, externalState
                   )}
 
                   {panel === 'subtitles' && (
-                    <div className="absolute bottom-full mb-3 sm:right-0 left-1/2 sm:left-auto -translate-x-1/2 sm:translate-x-0 bg-[#1c1f26] border border-white/10 rounded-2xl p-2 w-[240px] sm:min-w-[240px] shadow-2xl max-h-[70vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+                    <div className="absolute bottom-full mb-3 right-0 sm:right-0 bg-[#1c1f26] border border-white/10 rounded-2xl p-2 w-[220px] sm:min-w-[240px] shadow-2xl max-h-[70vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
                       <button onClick={() => setPanel('main')} className="flex items-center gap-1 text-xs text-white/40 hover:text-white mb-2 px-2 py-2">
                         <svg className="w-3 h-3 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                         بازگشت
@@ -509,7 +509,7 @@ export default function VideoPlayer({ videoUrl, videoType, onSync, externalState
                   )}
 
                   {panel === 'audio' && (
-                    <div className="absolute bottom-full mb-3 sm:right-0 left-1/2 sm:left-auto -translate-x-1/2 sm:translate-x-0 bg-[#1c1f26] border border-white/10 rounded-2xl p-2 w-[220px] sm:min-w-[220px] shadow-2xl max-h-[70vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+                    <div className="absolute bottom-full mb-3 right-0 sm:right-0 bg-[#1c1f26] border border-white/10 rounded-2xl p-2 w-[200px] sm:min-w-[220px] shadow-2xl max-h-[70vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
                       <button onClick={() => setPanel('main')} className="flex items-center gap-1 text-xs text-white/40 hover:text-white mb-2 px-2 py-2">
                         <svg className="w-3 h-3 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                         بازگشت
@@ -524,7 +524,7 @@ export default function VideoPlayer({ videoUrl, videoType, onSync, externalState
                   )}
 
                   {panel === 'subtitle-style' && (
-                    <div className="absolute bottom-full mb-3 sm:right-0 left-1/2 sm:left-auto -translate-x-1/2 sm:translate-x-0 bg-[#1c1f26] border border-white/10 rounded-2xl p-4 w-[280px] sm:min-w-[280px] shadow-2xl max-h-[70vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+                    <div className="absolute bottom-full mb-3 right-0 sm:right-0 bg-[#1c1f26] border border-white/10 rounded-2xl p-4 w-[260px] sm:min-w-[280px] shadow-2xl max-h-[70vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
                       <button onClick={() => setPanel('main')} className="flex items-center gap-1 text-xs text-white/40 hover:text-white mb-4 px-1 py-2">
                         <svg className="w-3 h-3 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                         بازگشت
