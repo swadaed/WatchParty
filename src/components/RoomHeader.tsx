@@ -12,13 +12,26 @@ interface RoomHeaderProps {
 export default function RoomHeader({ roomName, roomId, userCount, users }: RoomHeaderProps) {
   const [copied, setCopied] = useState(false)
   const [showUsers, setShowUsers] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const buttonRef = useRef<HTMLButtonElement>(null)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const [dropdownAlign, setDropdownAlign] = useState<'left' | 'right'>('left')
+
+  // Calculate dropdown position to keep it in viewport
+  useEffect(() => {
+    if (!showUsers || !buttonRef.current) return
+    const btn = buttonRef.current.getBoundingClientRect()
+    const dropdownWidth = 180
+    const spaceRight = window.innerWidth - btn.right
+    const spaceLeft = btn.left
+    setDropdownAlign(spaceRight < dropdownWidth && spaceLeft > spaceRight ? 'right' : 'left')
+  }, [showUsers])
 
   // Close dropdown when clicking outside
   useEffect(() => {
     if (!showUsers) return
     const handler = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
         setShowUsers(false)
       }
     }
@@ -45,15 +58,18 @@ export default function RoomHeader({ roomName, roomId, userCount, users }: RoomH
         <div className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse-dot flex-shrink-0" />
         <div className="min-w-0">
           <h1 className="text-xs sm:text-sm font-bold text-white truncate max-w-[120px] sm:max-w-none" style={{ fontFamily: 'var(--font-heading)' }}>{roomName}</h1>
-          <div className="relative inline-block" ref={dropdownRef}>
-            <button onClick={() => setShowUsers(!showUsers)} className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs text-white/40 hover:text-white/70 transition-all min-h-[24px] px-1 -mx-1 rounded-md hover:bg-white/5" style={{ fontFamily: 'var(--font-body)' }}>
+<div className="relative inline-block" ref={containerRef}>
+            <button ref={buttonRef} onClick={() => setShowUsers(!showUsers)} className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs text-white/40 hover:text-white/70 transition-all min-h-[24px] px-1 -mx-1 rounded-md hover:bg-white/5" style={{ fontFamily: 'var(--font-body)' }}>
               <span>{userCount} نفر آنلاین</span>
               <svg className={`w-3 h-3 transition-transform duration-200 ${showUsers ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
             </button>
 
-            {/* Users dropdown — positioned relative to button */}
+            {/* Users dropdown — positioned relative to button, auto-aligns to stay in viewport */}
             {showUsers && (
-              <div className="absolute top-full mt-2 ltr left-0 z-50 animate-fade-in">
+              <div ref={dropdownRef} className="absolute top-full mt-2 z-50 animate-fade-in" style={{
+                left: dropdownAlign === 'left' ? 0 : 'auto',
+                right: dropdownAlign === 'right' ? 0 : 'auto'
+              }}>
                 <div className="bg-[#1c1f26] border border-white/10 rounded-xl p-3 shadow-2xl flex flex-wrap gap-1.5 min-w-[160px]">
                   {users.length === 0 ? (
                     <span className="text-[11px] text-white/30 px-1" style={{ fontFamily: 'var(--font-body)' }}>کسی آنلاین نیست</span>
