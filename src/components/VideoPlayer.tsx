@@ -426,7 +426,10 @@ export default function VideoPlayer({ videoUrl, videoType, onSync, externalState
                     )}
                   </button>
                   <div className="relative w-0 group-hover/vol:w-20 max-sm:w-20 transition-all duration-200 overflow-hidden">
-                    <input type="range" min="0" max="100" value={vol} onChange={onVol} className="w-full h-1 accent-[var(--accent)]" />
+                    <div className="relative h-1 bg-white/10 rounded-full overflow-hidden">
+                      <div className="absolute inset-y-0 left-0 bg-[var(--accent)] rounded-full transition-all duration-100" style={{ width: `${vol}%` }} />
+                    </div>
+                    <input type="range" min="0" max="100" value={vol} onChange={onVol} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
                   </div>
                 </div>
 
