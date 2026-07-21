@@ -7,14 +7,10 @@
 <p align="center">
   <a href="https://watchparty.dpdns.org"><strong>🚀 watchparty.dpdns.org</strong></a>
 </p>
-
-<br>
-
 <p align="center">
   &nbsp;|&nbsp;
   <a href="./README-FA.md">🇮🇷 فارسی</a>
 </p>
-
 ---
 
 ## ✨ Features
@@ -78,6 +74,6 @@ Licensed under the [MIT License](./LICENSE).
 
 ---
 
-## 📦 Deploy
+##  Deploy
 
 Deploy your own instance — see the [Deployment Guide](./SETUP.md).
