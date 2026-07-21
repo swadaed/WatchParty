@@ -1,11 +1,8 @@
 # Watch Party 🎬
 
 **Watch Party** is a free, real-time synchronized video-watching platform with voice chat. Create a room, add a video link, share the link with friends, and watch together — everyone's playback stays perfectly in sync.
-
-<br>
-
 <p align="center">
-  <a href="https://watchparty.dpdns.org"><strong>🚀 watchparty.dpdns.org</strong></a>
+  <a href="https://watchparty.dpdns.org"><strong>watchparty.dpdns.org</strong></a>
 </p>
 <p align="center">
   <a href="./README-FA.md">🇮🇷 فارسی</a>
