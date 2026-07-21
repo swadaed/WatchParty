@@ -132,17 +132,15 @@ export function useVoice(roomId: string, username: string) {
       await room.connect(url, token)
       roomRef.current = room
 
-      // Request mic permission but keep muted initially
+      // Enable microphone by default
       try {
         await room.localParticipant.setMicrophoneEnabled(true)
-        // Immediately mute so user can choose when to speak
-        await room.localParticipant.setMicrophoneEnabled(false)
-        console.log('[Voice] Mic ready, muted by default')
+        console.log('[Voice] Mic enabled by default')
+        setMuted(false)
       } catch (micErr) {
         console.error('[Voice] Mic error:', micErr)
-        // Still connected even without mic
+        setMuted(true)
       }
-      setMuted(true)
 
     } catch (err: any) {
       console.error('[Voice] Join error:', err)
